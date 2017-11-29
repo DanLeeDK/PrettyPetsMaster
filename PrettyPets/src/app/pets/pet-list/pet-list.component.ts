@@ -13,6 +13,10 @@ export class PetListComponent implements OnInit {
 petslist: Pet[];
   constructor(private service: PetService) { }
 
+  addFavorit() {
+    alert('You added this pet to your list off favorit pets!');
+  }
+
   ngOnInit() {
     this.service.getAllPets().subscribe(data => {
       this.petslist = data;

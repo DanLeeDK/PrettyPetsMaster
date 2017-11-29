@@ -1,19 +1,107 @@
-<table class='table table-hover' *ngIf="petslist">
-  <thead class='thead-dark'>
-<tr>
-<th><label>Name</label></th>
-<th><label>Photo</label></th>
-<th><label>Town</label></th>
-<th><label>Age</label></th>
-</tr>
-  </thead>
-<tbody>
-<tr *ngFor="let pet of petslist">
-<td routerLink="/petprofil/{{pet.id}}"><label class=pull-left>{{pet.name}}</label></td>
-<td routerLink="/petprofil/{{pet.id}}"><img class=pull-left alt="Picture of the pet" width= 300px
-  class="img img-rounded img-responsive" height=300px  src={{pet.images[0].imagePath}}></td>
-<td routerLink="/petprofil/{{pet.id}}"><label class=pull-left>{{pet.town}}</label></td>
-<td routerLink="/petprofil/{{pet.id}}"><label class=pull-left>{{pet.age}} y</label></td>
-</tr>
-</tbody>
-</table>
+
+<div *ngFor="let pet of petslist">
+    <div class="container">
+        <div class="col-xs-12 col-md-12">
+
+                        <!-- product box start here-->
+                        <div class="prod-info-main prod-wrap clearfix">
+
+                              <div class="row">
+
+                                   <div class="col-md-5 col-sm-12 col-xs-12">
+
+                                    <div class="product-image">
+
+                                     <img src={{pet.images[0].imagePath}} class="img img-rounded img-responsive">
+
+                                       <span class="tag2 hot">
+
+                                         CUTE!
+
+                                       </span>
+
+                               </div>
+
+                          </div>
+
+            <div class="col-md-7 col-sm-12 col-xs-12">
+
+                          <div class="product-deatil">
+
+                                       <h5 class="name">
+
+                                       <a href="#">
+
+                                        {{pet.name}}
+
+                                       </a>
+
+                                       <a href="#">
+
+                                       <span>{{pet.age}} y/o</span>
+
+                                       </a>
+
+                                </h5>
+
+                                    <p class="price-container">
+
+                                     <span>{{pet.town}}</span>
+
+                                   </p>
+
+                      <span class="tag1"></span>
+
+           </div>
+
+          <div class="description">
+
+              <p>A Short product description here </p>
+
+           </div>
+
+              <div class="product-info smart-form">
+
+                 <div class="row">
+
+                 <div class="col-md-12">
+
+                  <a (click)=addFavorit() class="btn btn-danger">Favorit</a>
+
+                     <a routerLink="/petprofil/{{pet.id}}" class="btn btn-info">More info</a>
+
+               </div>
+
+              <div class="col-md-12">
+
+                 <div class="rating">Rating:
+
+                  <label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+
+                  <label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+
+                  <label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+
+                  <label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+
+                  <label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+
+                 </div>
+
+               </div>
+
+            </div>
+
+           </div>
+
+          </div>
+
+          </div>
+        </div>
+
+        <!-- end product -->
+
+        </div>
+        </div>
+
+
