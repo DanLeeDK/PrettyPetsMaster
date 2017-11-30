@@ -14,7 +14,7 @@ petslist: Pet[];
   constructor(private service: PetService) { }
 
   addFavorit() {
-    alert('You added this pet to your list off favorit pets!');
+    alert('You added this pet to your list of favorit pets!');
   }
 
   ngOnInit() {

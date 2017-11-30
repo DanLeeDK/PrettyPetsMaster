@@ -5,12 +5,12 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class GlobalEventsManager {
 
-    private _showNavBar: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    public showNavBarEmitter: Observable<boolean> = this._showNavBar.asObservable();
+    private _showNavBarAndFooter: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    public showNavBarAndFooterEmitter: Observable<boolean> = this._showNavBarAndFooter.asObservable();
 
     constructor() {}
 
-    showNavBar(ifShow: boolean) {
-        this._showNavBar.next(ifShow);
+    showNavBarAndFooter(ifShow: boolean) {
+        this._showNavBarAndFooter.next(ifShow);
     }
 }

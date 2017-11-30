@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.credentials = new UserCredentials();
   }
-y
+
   ngOnInit() {
     if (localStorage.getItem('token')) {
       this.loggedIn = false;
@@ -31,7 +31,7 @@ y
   public login() {
      this.userService.login(this.credentials).subscribe(
        (res) => {
-        this.globalEventsManager.showNavBar(true);
+        this.globalEventsManager.showNavBarAndFooter(true);
         this.router.navigate(['welcome']);
        }
      );

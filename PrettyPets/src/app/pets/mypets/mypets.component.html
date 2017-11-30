@@ -1,4 +1,3 @@
-<div *ngIf=noPets >You dont have any pets added yet.</div>
 <div *ngFor="let pet of petslist">
     <div class="container">
         <div class="col-xs-12 col-md-12">
@@ -66,9 +65,7 @@
 
                  <div class="col-md-12">
 
-                  <a (click)=addFavorit() class="btn btn-danger">Favorit</a>
-
-                     <a routerLink="/petprofil/{{pet.id}}" class="btn btn-info">More info</a>
+                  <a routerLink="/petprofil/{{pet.id}}" class="btn btn-info">More info</a>
 
                </div>
 

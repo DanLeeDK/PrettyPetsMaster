@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private globalEventsManager: GlobalEventsManager
   ) {
-    this.globalEventsManager.showNavBarEmitter.subscribe((mode) => {
+    this.globalEventsManager.showNavBarAndFooterEmitter.subscribe((mode) => {
         this.showNavbar = mode;
     });
 }
@@ -29,7 +29,7 @@ toggleCollapse() {
   }
   logout() {
     this.userService.logout();
-    this.globalEventsManager.showNavBar(false);
+    this.globalEventsManager.showNavBarAndFooter(false);
   }
 
   ngOnInit() {

@@ -1,9 +1,9 @@
 
-<div *ngIf=pet>
+<div *ngIf=pet style="padding:10px;">
   <!-- Images -->
     <carousel>
       <slide *ngFor="let img of pet.images">
-        <img src={{img.imagePath}} alt="slide" style="display: block; width: 100%;">
+        <img class="img img-rounded img-responsive" src={{img.imagePath}} alt="slide" style="display: block; width: 100%;">
       </slide>
     </carousel>
 
@@ -34,7 +34,7 @@
   <!-- Add image -->
       <div>
         <label>Upload more pictures of {{pet.name}}</label>
-        <input type="file" required name="PetImage" (click)=LoadImage() class="form-control" style="padding-top: 1cm; padding-bottom: 0.5cm"  #PetImage  placeholder="Upload file..." />
+        <input type="file" multiple required name="PetImage" (click)=LoadImage() class="form-control" style="padding-top: 1cm; padding-bottom: 0.5cm"  #PetImage  placeholder="Upload file..." />
 
         <button type="button" [hidden]=ImageLoaded (click)="addImage()">Submit</button>
       </div>

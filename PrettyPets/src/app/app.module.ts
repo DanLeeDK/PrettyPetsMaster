@@ -10,13 +10,14 @@ import { TokenService } from './token.service';
 import { UserService } from './user/user.service';
 import { SearchPipe } from './search-pipe';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule , NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule, CanActivate } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetService } from './pets/pet.service';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CollapseModule } from 'ngx-bootstrap';
@@ -27,6 +28,7 @@ import { PetListComponent } from './pets/pet-list/pet-list.component';
 import { PetProfilComponent } from './pets/pet-profil/pet-profil.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { LoginComponent } from './user/login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -39,9 +41,11 @@ import { LoginComponent } from './user/login/login.component';
     PetListComponent,
     PetProfilComponent,
     CreateUserComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     CarouselModule.forRoot(),
     AlertModule.forRoot(),
     NgbModule.forRoot(),
@@ -53,6 +57,9 @@ import { LoginComponent } from './user/login/login.component';
     CollapseModule,
     BrowserAnimationsModule
   ],
+  schemas: [
+     NO_ERRORS_SCHEMA
+    ],
 providers: [
     PetService,
     UserService,
